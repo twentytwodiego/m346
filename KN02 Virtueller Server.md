@@ -6,7 +6,7 @@
 
 ### Einstellungen
 
-#### Diskgrösse: 8GB
+#### Diskgrösse: 8GiB
 ![Diskgrösse](Bilder/VolumeGrösse.png)
 #### RAM-Grösse: 1GB, Anzahl CPUs:1
 ![InstanzEinstellungen](Bilder/EinstellungenInstance.png)
