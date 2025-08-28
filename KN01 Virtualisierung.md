@@ -2,11 +2,11 @@
 
 Ein Hypervisor ist eine Software, die ermöglicht, mehrere VMs auf der gleichen Hardware auszuführen. Jede VM kann ihr eigenes Betriebssystem und eigene Anwendungen haben, während die Hardwareressourcen gemeinsam genutzt werden.  
 
-### Typ 1 – Bare-Metal Hypervisor
+### Typ 1 - Bare-Metal Hypervisor
 Es läuft direkt auf der Hardware (ohne ein Host-Betriebssystem) und es ist sehr effizient und performant. 
 <br> Beispiele: VMware ESXi, Microsoft Hyper-V, Xen.  
 
-### Typ 2 – Hosted Hypervisor
+### Typ 2 - Hosted Hypervisor
 Es läuft auf einem bestehenden Betriebssystem wie ein normales Programm,, es ist einfach zu installieren, aber weniger performant, da ein zusätzliches Host-OS dazwischen liegt.  
 <br> Beispiele: Oracle VirtualBox, VMware Workstation.  
 
