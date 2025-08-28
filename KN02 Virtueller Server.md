@@ -8,7 +8,7 @@
 
 #### Diskgrösse: 8GiB
 ![Diskgrösse](Bilder/VolumeGrösse.png)
-#### RAM-Grösse: 1GB, Anzahl CPUs:1
+#### RAM-Grösse: 1GiB, Anzahl CPUs:1
 ![InstanzEinstellungen](Bilder/EinstellungenInstance.png)
 
 
