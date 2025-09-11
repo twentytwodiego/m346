@@ -6,9 +6,9 @@
 
 ### Einstellungen
 
-#### Diskgrösse: 8GB
+#### Diskgrösse: 8GiB
 ![Diskgrösse](Bilder/VolumeGrösse.png)
-#### RAM-Grösse: 1GB, Anzahl CPUs:1
+#### RAM-Grösse: 1GiB, Anzahl CPUs:1
 ![InstanzEinstellungen](Bilder/EinstellungenInstance.png)
 
 
@@ -26,4 +26,5 @@ ssh -i "C:\Users\diego\.ssh\diego2.pem" ubuntu@52.91.140.105
 ![Proof2](Bilder/ProofSSH2.png)
 
 Verwendeter Schlüssel
+
 ![Bih](Bilder/Schlüsselname_diego1.png)

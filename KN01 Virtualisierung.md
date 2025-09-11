@@ -7,7 +7,7 @@ Es läuft direkt auf der Hardware (ohne ein Host-Betriebssystem) und es ist sehr
 <br> Beispiele: VMware ESXi, Microsoft Hyper-V, Xen.  
 
 ### Typ 2 - Hosted Hypervisor
-Es läuft auf einem bestehenden Betriebssystem wie ein normales Programm,, es ist einfach zu installieren, aber weniger performant, da ein zusätzliches Host-OS dazwischen liegt.  
+Es läuft auf einem bestehenden Betriebssystem wie ein normales Programm, es ist einfach zu installieren, aber weniger performant, da ein zusätzliches Host-OS dazwischen liegt.  
 <br> Beispiele: Oracle VirtualBox, VMware Workstation.  
 
 **Unterschied:**  
