@@ -1,0 +1,25 @@
+#cloud-config
+users:                          
+  - name: ubuntu                
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin        
+    shell: /bin/bash            
+    ssh_authorized_keys:        
+      # Teacher key
+      - ssh-key AAAAB3NzaC1yc2EAAAADAQABAAABAQDT+7GJtX+CrjK8wpAKWrddHlEGI7dYL9x/opjyhuexzOVJOOzJgCv5+QIACSdHUDCrdDsIdE9sj9JqvjhBouSCKBG1CeRkOwWCyR/xFq2E0t8XPsHPxkSVI4PdwQFbjnmeBindz/wQtSr6SuoZAn7LaKp6qj0ZRn+DGy5c60SmWDOXRVjLeDA+HU4Byvdtn+tyzJM4ADyng4e6lg3MaYzXk2ZBCDu7sF+HL/DucVsv+T7GXLyPX1k1xzFYEOiMBLAYvBhRZ7KaeSH7Uo1XnPAivwBF6+mirsF9M05LU3Sn2MP2d1ddXNmbZcZcBYgGSMwLKsY6+sT/pMAJq4Hkmug1 aws-key
+      # Diego1 Key
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDP6tm2+t4uzoUiPX9N0mCHEsfBtMoXaozG0sTEtNZIlEZyABK3F43uuO6wcflZ+Wdy9vZtXAcdWsH3T+kSeAPjcIdWAXKyIf3QK82kkdHRzgj8TWuqymOQqlN8qgi7Big7eSaINAsoMUFw/wIY1ZukQUQEQe4Lnrq+dD4DoSlHBnO3bnyGvpBFFcx7WVppVTZCnIXW1ENWSyEYevvjRVA2MS3m+fTJ/xA+J+KDor135ULqF8D8OPSzyPD98WAY/wqnCnzkh0dGeoMSGFwEV1o61CruWStawz6JWBQpwOH0LE35xa8WKl3B7Ym/+ae92ACHJgJfTQl5B2kmxcYVKyNr aws-key
+ 
+ssh_pwauth: false                
+disable_root: false              
+package_update: true            
+packages:
+  - mariadb-server
+  - mariadb-client                    
+  - curl                        
+  - wget                        
+ 
+runcmd:
+  - sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
+  - sudo systemctl restart mariadb
+  - sudo mysql -sfu root -e "GRANT ALL ON *.* TO 'admin'@'%' IDENTIFIED BY 'nettspend' WITH GRANT OPTION;"  

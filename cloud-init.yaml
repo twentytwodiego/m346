@@ -1,0 +1,15 @@
+#cloud-config
+users:  # Liste von Benutzerdefinitionen, die angelegt/konfiguriert werden
+  - name: ubuntu  # Benutzername
+    sudo: ALL=(ALL) NOPASSWD:ALL  # Sudo-Regel: alle Kommandos ohne Passwort als jeder Benutzer ausführen
+    groups: users, admin  # Zusätzliche Gruppen; 'admin' vor allem bei älteren Ubuntu-Versionen 
+    home: /home/ubuntu  # Home-Verzeichnis des Benutzers
+    shell: /bin/bash  # Login-Shell des Benutzers 
+    ssh_authorized_keys:  # Liste der SSH-Public-Keys, die in ~/.ssh/authorized_keys eingetragen werden
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key  # Öffentlicher SSH-Schlüssel 
+ssh_pwauth: false  # Deaktiviert Passwort-Login via SSH; nur Key-Authentifizierung erlaubt 
+disable_root: false  # Root-Account nicht zusätzlich sperren 
+package_update: true  # Führt vor Paketinstallationen ein apt-get update aus 
+packages:  # Liste von Paketen, die per APT installiert werden
+  - curl  # Kommandozeilen-Tool für HTTP-Anfragen/Downloads
+  - wget  # Kommandozeilen-Downloader 
